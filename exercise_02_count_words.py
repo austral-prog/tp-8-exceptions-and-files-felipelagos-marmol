@@ -37,5 +37,3 @@ def count_words(filename):
             else:
                 diccionario[i] = 1
     return diccionario
-    """
-    pass  # Reemplazar con tu implementación
