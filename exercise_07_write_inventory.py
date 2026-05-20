@@ -32,4 +32,5 @@ def write_inventory(filename, inventory):
         for item in sorted(inventory.keys()):
             cantidad = inventory[item]
             archivo.write(f"{item}:{cantidad}")
+    return None
 
