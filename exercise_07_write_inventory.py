@@ -31,6 +31,5 @@ def write_inventory(filename, inventory):
     with open(filename, 'w') as archivo:
         for item in sorted(inventory.keys()):
             cantidad = inventory[item]
-            archivo.write(f"{item}:{cantidad}")
+            archivo.write(f"{item}:{cantidad}\n")
     return None
-
