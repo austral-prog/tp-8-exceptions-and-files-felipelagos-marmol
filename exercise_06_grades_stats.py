@@ -14,7 +14,7 @@ def grades_stats(filename):
     Reglas:
     - El promedio se calcula con todas las notas de la línea.
     - Las líneas vacías se ignoran.
-    - Se garantiza que todas las notas son números válidos.
+    - Se garantiza que todas las notas son núomers válidos.
     - Si el archivo no existe, propagar FileNotFoundError.
 
     Args:
@@ -34,4 +34,17 @@ def grades_stats(filename):
             "Cami": (10.0, 10.0, 10.0),
         }
     """
-    pass  # Reemplazar con tu implementación
+    diccionario = {}
+
+    with open (filename, 'r') as archivo:
+        for i in archivo:
+            if i.strip() == "":
+                continue
+            separado = i.strip().split(":")
+            nombre = separado[0]
+            notas = [float(n) for n in separado[1].split(",")]
+            promedio = sum(notas)/len(notas)
+            maximo =  max(notas)
+            minimo = min(notas)
+            diccionario[nombre] = (promedio, maximo, minimo)
+    return diccionario
